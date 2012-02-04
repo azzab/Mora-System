@@ -1,0 +1,14 @@
+#login .error, #login .success {
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	margin-left: 650px;
+	margin-top: -280px;
+	width: 200px;
+}
+#login .error {
+	background: #c00 !important;
+}
+#login .success {
+	background: #008800 !important;
+}

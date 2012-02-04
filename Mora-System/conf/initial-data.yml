@@ -1,0 +1,13 @@
+# Test data
+
+Student(bob):
+    email:bob@gmail.com
+    password:secret
+    name:Bob
+    isAdmin:true
+    gender:true
+    address:s
+    maritalStatus:sa
+    phoneNumber:adasd
+    work:sad
+    birthDate:2011-9-2

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="${_response_encoding}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/style.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        #{get 'moreScripts' /}
+        
+<style type="text/css"> 
+#tools {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    left: 10px;
+}
+
+#tools a {
+    color: #fff;
+    text-decoration: none;
+	font-size:20px;
+}
+#tools2{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    left: 170px;
+}
+
+#tools2 a {
+    color: #fff;
+    text-decoration: none;
+	font-size:20px;
+}
+
+ img, div, input { behavior: url("iepngfix.htc") }
+ 
+/* form 2 */
+
+	#form2{
+		margin:1em 0;
+		color:#fff;
+		width:320px; /* customize width, this form have fluid layout */
+		}
+	#form2 h3{
+		margin:0;
+		background:#57a700 url(/public/images/form2/form_heading.gif) repeat-x;		
+		color:#fff;
+		font-size:20px;
+		border:1px solid #57a700;
+		border-bottom:none;
+		}		
+	#form2 h3 span{
+		display:block;
+		padding:10px 20px;
+		background:url(/public/images/form2/form_ico.gif) no-repeat 93% 50%;			
+		}				
+	#form2 fieldset{
+		margin:0;
+		padding:0;
+		border:none;	
+		border-top:3px solid #000;
+		background:#000 url(/public/images/form2/form_top.gif) repeat-x;		
+		padding-bottom:1em;
+		}		
+	#form2 legend{display:none;}	
+	#form2 p{margin:.5em 20px;}	
+	#form2 label{display:block;}	
+	#form2 input, #form2 textarea{		
+		width:272px;
+		border:1px solid #111;
+		background:#282828 url(/public/images/form2/form_input.gif) repeat-x;
+		padding:5px 3px;
+		color:#fff;
+		}		
+	#form2 textarea{
+		height:125px;
+		overflow:auto;
+		}					
+	#form2 p.submit{
+		text-align:right;
+		}	
+	#form2 button{
+		padding:0 20px;
+		height:32px;
+		line-height:32px;		
+		border:1px solid #70ad2e;
+		background:#5aae00 url(/public/images/form2/form_button.gif) repeat-x;
+		color:#fff;
+		cursor:pointer;		
+		text-align:center;		
+		}				
+
+/* // form 2 */
+</style>
+        
+    </head>
+    <body>
+	#{doLayout /}
+    </body>
+</html>
