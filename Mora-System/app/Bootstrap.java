@@ -14,7 +14,7 @@ public class Bootstrap extends Job {
 			Student s = new Student("Ahmed", "elhadiahmed3@gmail.com", "123",
 					true, true);
 			s.save();
-			Student s2 = new Student("hadi", "e@gmail.com", "123",
+			Student s2 = new Student("hady", "e@gmail.com", "123",
 					false, false);
 			s2.save();
 		}
