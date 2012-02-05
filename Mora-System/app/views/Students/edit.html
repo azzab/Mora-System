@@ -1,0 +1,214 @@
+#{extends 'main.html' /}
+#{set title:messages.get('crud.show.title', type.modelName) /}
+<ul id="tools">
+	<li>
+		<a href="@{Secure.logout()}">تسجيل الخروج</a>
+	</li>
+</ul>
+<!--wrapper starts-->
+<div id="wrapper">
+	<!--container starts-->
+	<div id="container">
+		<div id="rightSide">
+			<!--ltcontent starts-->
+			<div id="ltcontent">
+				<!--hdlogo starts-->
+				<div id="hdlogo" align="center">
+					<img  STYLE="WIDTH:310px; HEIGHT:350px"  src="@{'public/images/topbanner.jpg'}" alt=""/>
+				</div>
+				<!--hdlogo ends-->
+				<!--about starts-->
+				<div id="about">
+					<div class="lthead" align="center">
+						<span class="tphead">About Authors Bio</span>
+					</div>
+					<div class="ltdetail">
+						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+					</div>
+					<div class="link">
+						Get in touch with us
+					</div>
+				</div>
+				<!--about ends-->
+				<div class="ltgap">
+				</div>
+				<!--popular starts-->
+				<div id="mostpop">
+					<div class="lthead">
+						<span>most popular posts</span>
+					</div>
+					<!--ltposts starts-->
+					<div class="ltposts">
+						<ul>
+							<li>
+								<a href="javascript:gadwal()">مستواي </a>
+							</li>
+							<li>
+								<a href="galsa.html">جلستي </a>
+							</li>
+							<li>
+								<a href="#">Expedia</a>
+							</li>
+							<li>
+								<a href="#">Omnis</a>
+							</li>
+							<li>
+								<a href="#">Voluptatum</a>
+							</li>
+						</ul>
+					</div>
+					<!--ltposts ends-->
+					<!--rtposts starts-->
+					<div class="rtposts">
+						<ul>
+							<li>
+								<a href="#">Nauts</a>
+							</li>
+							<li>
+								<a href="#">Video 3</a>
+							</li>
+							<li>
+								<a href="#">Adipisci</a>
+							</li>
+							<li>
+								<a href="#">Numquam</a>
+							</li>
+							<li>
+								<a href="#">Vel Illium</a>
+							</li>
+						</ul>
+					</div>
+					<!--rtposts ends-->
+					<div class="clear">
+					</div>
+				</div>
+				<!--popular ends-->
+				<div class="ltgap">
+				</div>
+				<!--about starts-->
+				<div id="social">
+					<div class="lthead">
+						<span>my social networks</span>
+					</div>
+					<div>
+						<a href="#">
+						<img src="@{'public/images/link1.png'}" alt="" />
+						</a>
+						<a href="#">
+						<img src="@{'public/images/link2.png'}" alt="" />
+						</a>
+						<a href="#">
+						<img src="@{'public/images/link3.png'}" alt="" />
+						</a>
+						<a href="#">
+						<img src="@{'public/images/link4.png'}" alt="" />
+						</a>
+						<a href="#">
+						<img src="@{'public/images/link5.png'}" alt="" />
+						</a>
+					</div>
+				</div>
+				<!--about ends-->
+			</div>
+		</div>
+		<!--ltcontent ends-->
+		<!--rtcontent starts-->
+		<div id="rtcontent">
+			<!--head starts-->
+			<div class="head">
+				التعريف
+			</div>
+			<!--head ends-->
+			<!--tagln starts-->
+			<div class="tagln">
+				صفحتك الخاصة و معلومات عنك
+			</div>
+			<!--tagln ends-->
+			<!--menulinks starts -->
+			<div id="menulinks">
+				<ul>
+					<li>
+						<a href="@{Students.edit()}">عدل ملفك الشخصي</a>
+					</li>
+					<li>
+						<a href="javascript:gadwal()">الجدول الإسبوعي</a>
+					</li>
+					<li>
+						<a href="javascript:showInfo()">معلومات عنك</a>
+					</li>
+					<li>
+						<a href="index.html" class="scrcast">البيت</a>
+					</li>
+				</ul>
+			</div>
+			<div id="crudShow" class="${type.name}">
+
+				<h2 id="crudShowTitle">&{'crud.show.title', type.modelName}</h2>
+
+				<div class="objectForm">
+					#{form action:@save(object._key()), enctype:'multipart/form-data'}
+					#{crud.form fields: ['name', 'email']}
+					#{crud.custom 'name'}
+					<p>
+						<label for="object_creator">
+							Name
+						</label>
+						<input value=${object.name} type=text id="object_creator" cols="30" rows="1" class="" name="object.name"/>
+					</p>
+					#{/crud.custom }
+					#{crud.custom 'email'}
+					<p>
+						<label for="object_creator2">
+							Email
+						</label>
+						<input value=${object.email} type=text id="object_creator2" cols="30" rows="1" class="" name="object.email">
+						</input>
+					</p>
+					#{/crud.custom }
+					#{/crud.form}
+					<p class="crudButtons">
+						<input type="submit" name="_save" value="&{'crud.save', type.modelName}" />
+						<input type="submit" name="_saveAndContinue" value="&{'crud.saveAndContinue', type.modelName}" />
+					</p>
+					<input type="submit" name="save" value="save" onclick=@{Students.save()} />
+					#{/form}
+				</div>
+				#{if s.isAdmin}
+				#{form @delete(object._key())}
+				<p class="crudDelete">
+					<input type="submit" value="&{'crud.delete', type.modelName}" />
+				</p>
+				#{/form}
+				#{/if}
+			</div>
+			<div class="clear">
+			</div>
+			<!--menulinks ends -->
+			<div id="myInfo" style="display: none;">
+				Email :
+
+				Mobile Number :
+			</div>
+			<div id="pp" style="display: none;">
+
+			</div>
+		</div>
+		<!--footer starts
+		<div id="footer">
+		<div class="copy">
+		&copy; 2010 Make Film Work
+		</div>
+		<div class="flinks">
+		<span><a href="#">HOME</a></span><span class="separator"> | </span>
+		<span><a href="#">ABOUT</a></span><span class="separator"> | </span>
+		<span><a href="#">REEL</a></span><span class="separator"> | </span>
+		<span><a href="#">SCREENCASTS</a></span><span class="separator"> | </span>
+		<span><a href="#">CONTACT</a></span><span class="separator"> | </span>
+		<span><a href="http://vectorart.org">Design by Vector</a></span>
+		</div>
+		</div>
+		footer ends-->
+	</div>
+	<!--container starts-->
+</div>
+<!--wrapper ends-->
