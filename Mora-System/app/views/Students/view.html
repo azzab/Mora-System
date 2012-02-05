@@ -1,6 +1,6 @@
 #{if s.isAdmin}
 <div id="tools">
-		<a href="@{Admin.view()}">Admin View</a>
+	<a href="@{Admin.view()}">Admin View</a>
 </div>
 #{/if}
 #{extends 'main.html' /}
@@ -132,7 +132,7 @@
 			<div id="menulinks">
 				<ul>
 					<li>
-						<a href="@{Students.show(s.id)}">عدل ملفك الشخصي</a>
+						<a href="@{Students.edit()}">عدل ملفك الشخصي</a>
 					</li>
 					<li>
 						<a href="javascript:gadwal()">الجدول الإسبوعي</a>

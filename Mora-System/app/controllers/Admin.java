@@ -19,23 +19,17 @@ public class Admin extends Controller {
 		}
 	}
 
-	public static void checkLogin() {
+	public static void index() {
 		Student s = Student.find("byEmail", Security.connected()).first();
 		if (s.isAdmin)
-			index();
-		else {
+			render(s);
+		else
 			try {
 				Students.view(s.id + "");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
-	}
-
-	public static void index() {
-		Student s = Student.find("byEmail", Security.connected()).first();
-		render(s);
 	}
 
 	public static void view() {

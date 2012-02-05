@@ -11,7 +11,8 @@ import play.mvc.*;
 public class Classes extends CRUD {
 
 	public static void view() throws Exception {
-		
+		Student s = Student.find("byEmail", Security.connected()).<Student> first();
+		render(s.myClass);
 	}
 
 }

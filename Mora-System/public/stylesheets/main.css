@@ -25,13 +25,12 @@ body {
     color: #fff;
     font-size: 48px;
     font-weight: bold;
-    letter-spacing: -4px;
     text-shadow: 1px 2px 2px #000;
 }
 
 #logo span {
     color: #f00;
-    font-size: 70%;
+    font-size: 100%;
 }
 
 #tools {
@@ -386,8 +385,8 @@ form label {
 #adminMenu li a {
     color: #fff;
     text-decoration: none;
-    font-size: 80%;
-    background: #591C64;
+    font-size: 100%;
+    background: #CC9900;
     padding: 2px 10px;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;

@@ -2,6 +2,8 @@ package models;
 
 import java.sql.Date;
 import javax.persistence.Entity;
+import javax.persistence.*;
+
 import play.data.validation.*;
 import play.db.jpa.Model;
 
@@ -53,7 +55,9 @@ public class Student extends Model {
 	public String phoneNumber;
 	public String work;
 	public Date birthDate;
-
+	@ManyToOne
+	public Class myClass;
+	
 	public Student(String name, String email, String password, boolean gender,
 			boolean isAdmin) {
 		this.name = name;

@@ -15,8 +15,8 @@
 
 		<div id="header">
 			<div id="logo">
-				Moravids.
-				<span>administration</span>
+				<span>	إدارة </span>
+				المرابطين
 			</div>
 			<ul id="tools">
 				<li>
@@ -29,8 +29,11 @@
 
 			<ul id="adminMenu">
 				#{secure.check 'admin'}
-				<li class="${request.controller == 'Users' ? 'selected' : ''}">
-					<a href="@{Students.list()}">Users</a>
+				<li class="${request.controller == 'Students' ? 'selected' : ''}">
+					<a href="@{Students.list()}">المتربيين</a>
+				</li>
+				<li class="${request.controller == 'Teachers' ? 'selected' : ''}">
+					<a href="@{Teachers.list()}">المربيين</a>
 				</li>
 				#{/secure.check}
 			</ul>

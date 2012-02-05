@@ -25,7 +25,18 @@ public class Security extends Secure.Security {
 	}
 
 	static void onAuthenticated() {
-		Admin.checkLogin();
+		Student s = Student.find("byEmail", Security.connected()).first();
+		if (s.isAdmin)
+			Admin.index();
+		else {
+			try {
+				Students.view(s.id + "");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
 	}
 
 }

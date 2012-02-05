@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.LinkedList;
 
 import javax.persistence.Entity;
+import javax.persistence.*;
 
 import controllers.Security;
 import play.data.validation.*;
@@ -19,7 +20,6 @@ public class Class extends Model {
 	/*
 	 *sector to which this class belongs
 	 */
-	@Required
 	String sector;
 	/*
 	 * The teacher responsible of this class
@@ -27,14 +27,9 @@ public class Class extends Model {
 	@Required
 	Student teacher;
 	/*
-	 * The teaching assistants in this class 
-	 */
-	@Required
-	LinkedList<Student> teachingAssistants = new LinkedList<Student>();
-	/*
 	 * The students of this class
 	 */
-	@Required
+	@OneToMany(mappedBy="myClass")
 	LinkedList<Student> students = new LinkedList<Student>();
 	/*
 	 * The academic level at which this class currently stands
@@ -52,10 +47,6 @@ public class Class extends Model {
 		this.teacher = teacher;
 		this.level = level;
 		this.startDate = startDate;
-	}
-	
-	public static Class getClassByTeacherEmail(String teacherEmail) {
-		return find("teacher", Student.find("byEmail", teacherEmail)).first();
 	}
 	
 	public Student getTeacher() {
